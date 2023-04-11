@@ -12,7 +12,7 @@ support for the BeagleBone Black and many other SBCs/SoMs supported by this driv
 - [Requirements:](#requirements)
 - [Building/Installing](#buildinginstalling)
     - [Applying Patch Manually](#applying-patch-manually)
-    - [Extending Yocto Recipe](#extending-yocto-recipe)
+    - [Yocto](#yocto)
 - [Usage](#usage)
     - [Slave drivers in mainline kernel](#slave-drivers-in-mainline-kernel)
 
@@ -55,12 +55,11 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- all
 ```
 
-<a id="extending-yocto-recipe"></a>
-### Extending Yocto Recipe
+<a id="yocto"></a>
+### Yocto
 
-If you are aiming for a fully automated or reproducible build, you can extend
-the [kernel recipe](https://git.yoctoproject.org/meta-ti/tree/meta-ti-bsp/recipes-kernel/linux/linux-ti-staging_5.10.bb)
-with a `.bbappend` that applies this patch and adds the required drivers to your
+You can extend the [kernel recipe](https://git.yoctoproject.org/meta-ti/tree/meta-ti-bsp/recipes-kernel/linux/linux-ti-staging_5.10.bb)
+with a `.bbappend` that applies this patch and adds the required options to your
 `.config`. See the [yocto manual](https://docs.yoctoproject.org/2.5/kernel-dev/kernel-dev.html#creating-and-preparing-a-layer)
 for details.
 
